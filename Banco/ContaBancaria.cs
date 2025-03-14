@@ -21,35 +21,22 @@ namespace Banco
             _titular = titular;
             _saldo = saldoInicial;
         }
-        public double Depositar
-        {
-            get
-            {
-                return _saldo;
-            }
-            set
-            {
-                _saldo += value;
-            }
-        }
-        public double Sacar
-        {
-            get
-            {
-                return _saldo;
-            }
-
-            set
-            {
-                if (_saldo > value)
-                {
-                    _saldo -= value;
-                }
-            }
-        }
+       
         public void ExibirSaldo()
         {
             Console.WriteLine($"Seu saldo é de :{_saldo}");
+        }
+        public double InserirSaque() 
+        {
+            Console.WriteLine("Insira o quanto você deseja sacar: ");
+            double saq = double.Parse(Console.ReadLine());
+            return _saldo -= saq;
+        }
+        public double InserirDeposito() 
+        {
+            Console.WriteLine("Insira o quanto você deseja depositar: ");
+            double dep = double.Parse(Console.ReadLine());
+            return _saldo += dep;
         }
     }
 }
