@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace Banco
 {
@@ -11,6 +13,7 @@ namespace Banco
         private int _numeroConta;
         private string _titular;
         private double _saldo;
+
 
         public ContaBancaria(int numeroConta, string titular, double saldoInicial)
         {
@@ -31,21 +34,23 @@ namespace Banco
         }
         public double Sacar
         {
-            get {
-                return _saldo; 
+            get
+            {
+                return _saldo;
             }
 
             set
             {
-                if(_saldo > value) 
+                if (_saldo > value)
                 {
                     _saldo -= value;
                 }
             }
         }
-        public void ExibirSaldo() 
+        public void ExibirSaldo()
         {
-            Console.WriteLine(_saldo);
+            Console.WriteLine($"Seu saldo é de :{_saldo}");
         }
     }
 }
+
