@@ -1,0 +1,15 @@
+/home/mars/Projetos/Banco/Banco/bin/Debug/net8.0/Banco
+/home/mars/Projetos/Banco/Banco/bin/Debug/net8.0/Banco.deps.json
+/home/mars/Projetos/Banco/Banco/bin/Debug/net8.0/Banco.runtimeconfig.json
+/home/mars/Projetos/Banco/Banco/bin/Debug/net8.0/Banco.dll
+/home/mars/Projetos/Banco/Banco/bin/Debug/net8.0/Banco.pdb
+/home/mars/Projetos/Banco/Banco/obj/Debug/net8.0/Banco.GeneratedMSBuildEditorConfig.editorconfig
+/home/mars/Projetos/Banco/Banco/obj/Debug/net8.0/Banco.AssemblyInfoInputs.cache
+/home/mars/Projetos/Banco/Banco/obj/Debug/net8.0/Banco.AssemblyInfo.cs
+/home/mars/Projetos/Banco/Banco/obj/Debug/net8.0/Banco.csproj.CoreCompileInputs.cache
+/home/mars/Projetos/Banco/Banco/obj/Debug/net8.0/Banco.sourcelink.json
+/home/mars/Projetos/Banco/Banco/obj/Debug/net8.0/Banco.dll
+/home/mars/Projetos/Banco/Banco/obj/Debug/net8.0/refint/Banco.dll
+/home/mars/Projetos/Banco/Banco/obj/Debug/net8.0/Banco.pdb
+/home/mars/Projetos/Banco/Banco/obj/Debug/net8.0/Banco.genruntimeconfig.cache
+/home/mars/Projetos/Banco/Banco/obj/Debug/net8.0/ref/Banco.dll

@@ -38,6 +38,35 @@ namespace Banco
             double dep = double.Parse(Console.ReadLine());
             return _saldo += dep;
         }
+        public void EscolherOperacao()
+        {
+            int op = 1;
+            while(op != 0){
+            Console.WriteLine("Insira qual operação você deseja:");
+            Console.WriteLine("0 - sair");
+            Console.WriteLine("1 -exibir saldo");
+            Console.WriteLine("2 -sacar ");
+            Console.WriteLine("3 -depositar");
+            op = int.Parse(Console.ReadLine());
+
+            switch(op)
+            {
+                case 0:
+                Console.WriteLine("Saindo...");
+                break;
+                case 1:
+                ExibirSaldo();
+                break;
+                case 2:
+                InserirSaque();
+                break;
+                case 3:
+                InserirDeposito();
+                break;
+            }
+            }
+
+        }
     }
 }
 

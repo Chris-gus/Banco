@@ -9,10 +9,23 @@
             cb.InserirDeposito();
             cb.ExibirSaldo();*/
 
-            ContaCorrente cc = new ContaCorrente(1234, "Mars", 1200);
+            Console.WriteLine("Insira o número da sua conta: ");
+            int numeroConta = int.Parse(Console.ReadLine());
 
-            cc.ExibirSaldo();
+            Console.WriteLine("Insira o nome do titular: ");
+            string titular = Console.ReadLine();
+
+            Console.WriteLine("Insira o seu saldo inicial: ");
+            int saldoInicial = int.Parse(Console.ReadLine());
+            ContaCorrente cc = new ContaCorrente(numeroConta, titular, saldoInicial);
+
+            cc.EscolherOperacao();
+            
+            
+
+            
         }
+  
 
 
     }
