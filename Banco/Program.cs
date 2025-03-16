@@ -41,7 +41,7 @@
             string titular = Console.ReadLine();
 
             Console.WriteLine("Insira o seu saldo inicial: ");
-            int saldoInicial = int.Parse(Console.ReadLine());
+            double saldoInicial = double.Parse(Console.ReadLine());
             ContaCorrente cc = new ContaCorrente(numeroConta, titular, saldoInicial);
 
             cc.EscolherOperacao();
