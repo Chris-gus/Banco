@@ -25,19 +25,18 @@ namespace Banco
         public void ExibirSaldo()
         {
             Console.Clear();
-            Console.WriteLine($"Seu saldo é de :{_saldo}");
-            Console.WriteLine("Enter para continuar");
-            Console.ReadLine();
-            Console.Clear();
+            Console.WriteLine($"Seu saldo atual é de :{_saldo}");
+            Limpar();
         }
         public double InserirSaque() 
         {
-            Console.Clear();
+            
+            
             Console.WriteLine("Insira o quanto você deseja sacar: ");
             double saq = double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter para continuar");
-            Console.ReadLine();
-            Console.Clear();
+            Limpar();
+            ExibirSaldo();
+            
             return _saldo -= saq;
         }
         public double InserirDeposito() 
@@ -45,16 +44,14 @@ namespace Banco
             Console.Clear();
             Console.WriteLine("Insira o quanto você deseja depositar: ");
             double dep = double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter para continuar");
-            Console.ReadLine();
-            Console.Clear();
+            Limpar();
             return _saldo += dep;
         }
         public void EscolherOperacao()
         {
             int op = 1;
             while(op != 0){
-                Console.Clear();
+            Console.Clear();
             Console.WriteLine("Insira qual operação você deseja:");
             Console.WriteLine("0 - sair");
             Console.WriteLine("1 -exibir saldo");
@@ -78,7 +75,12 @@ namespace Banco
                 break;
             }
             }
-
+        }
+        public void Limpar() 
+        {
+            Console.WriteLine("Enter para continuar...");
+            Console.ReadLine();
+            Console.Clear();
         }
     }
 }
