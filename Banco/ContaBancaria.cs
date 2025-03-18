@@ -10,10 +10,60 @@ namespace Banco
 {
     public class ContaBancaria
     {
+
         private int _numeroConta;
         private string _titular;
         private double _saldo;
+        public int NumeroConta
+        {
+            get { return _numeroConta; } 
+            set {
+                if (value > 0)
+                {
+                    _numeroConta = value;
+                }
 
+                else 
+                {
+                    throw new Exception($"O número da conta não pode ser {value} (deve ser mais que 0).");
+                   
+                }
+            }
+        }
+        public string Titular 
+        {
+            get { return _titular; }
+            set
+            {
+                if(value != null && value.Length >= 2)
+                {
+                    _titular = value;
+                }
+                else if (value == "")
+                {
+                    throw new Exception($"O nome não pode ser nulo.");
+                }
+                else
+                {
+                    throw new Exception($"O nome não pode ter apenas {value.Length} carácter(es) (deve ser mais que 1).");
+                }
+            }
+        }
+        public double Saldo 
+        {
+            get { return _saldo; }
+            set
+            {
+                if(value > 0)
+                {
+                    _saldo = value;
+                }
+                else
+                {
+                    throw new Exception($"Saldo não pode ser {value} (deve ser maior que 0).");
+                }
+            }
+        }
 
         public ContaBancaria(int numeroConta, string titular, double saldoInicial)
         {
@@ -22,66 +72,15 @@ namespace Banco
             _saldo = saldoInicial;
         }
        
-        public void ExibirSaldo()
-        {
-            Console.Clear();
-            Console.WriteLine($"Seu saldo atual é de :{_saldo}");
-            Limpar();
-        }
-        public double InserirSaque() 
-        {
-            
-            
-            Console.WriteLine("Insira o quanto você deseja sacar: ");
-            double saq = double.Parse(Console.ReadLine());
-            Limpar();
-            ExibirSaldo();
-            
-            return _saldo -= saq;
-        }
-        public double InserirDeposito() 
-        {
-            Console.Clear();
-            Console.WriteLine("Insira o quanto você deseja depositar: ");
-            double dep = double.Parse(Console.ReadLine());
-            Limpar();
-            return _saldo += dep;
-        }
-        public void EscolherOperacao()
-        {
-            int op = 1;
-            while(op != 0){
-            Console.Clear();
-            Console.WriteLine("Insira qual operação você deseja:");
-            Console.WriteLine("0 - sair");
-            Console.WriteLine("1 -exibir saldo");
-            Console.WriteLine("2 -sacar ");
-            Console.WriteLine("3 -depositar");
-            op = int.Parse(Console.ReadLine());
 
-            switch(op)
-            {
-                case 0:
-                Console.WriteLine("Saindo...");
-                break;
-                case 1:
-                ExibirSaldo();
-                break;
-                case 2:
-                InserirSaque();
-                break;
-                case 3:
-                InserirDeposito();
-                break;
-            }
-            }
-        }
-        public void Limpar() 
-        {
-            Console.WriteLine("Enter para continuar...");
-            Console.ReadLine();
-            Console.Clear();
-        }
+  
+
+
+
+      
+        
+
+
     }
 }
 

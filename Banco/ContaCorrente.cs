@@ -8,9 +8,11 @@ namespace Banco
 {
     public class ContaCorrente : ContaBancaria
     {
+        
         public ContaCorrente(int numeroConta, string titular, double saldoInicial) : base(numeroConta, titular, saldoInicial)
         {
             
         }
+
     }
 }
