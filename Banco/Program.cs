@@ -45,10 +45,21 @@
         static double InserirDeposito(ContaBancaria conta)
         {
             Console.Clear();
+            try{
             Console.WriteLine("Insira o quanto você deseja depositar: ");
             double dep = double.Parse(Console.ReadLine());
             Limpar();
+            if(dep > 0){
             return conta.Saldo += dep;
+            }
+            else {throw new Exception("O valor deve ser maior que 0.");}
+            }
+            catch(Exception ex)
+            {
+                    Console.WriteLine(ex.Message);
+                Limpar();
+                return InserirDeposito(conta);
+            }
         }
         static double InserirSaque(ContaBancaria conta)
         {
@@ -79,6 +90,8 @@
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                Limpar();
+                Interacao(conta);
             }
         }
         static void EscolherConta()

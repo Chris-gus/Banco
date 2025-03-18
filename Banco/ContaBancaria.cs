@@ -42,6 +42,7 @@ namespace Banco
                 else if (value == "")
                 {
                     throw new Exception($"O nome não pode ser nulo.");
+                    
                 }
                 else
                 {
@@ -49,7 +50,7 @@ namespace Banco
                 }
             }
         }
-        public double Saldo 
+        public double Saldo
         {
             get { return _saldo; }
             set
@@ -83,4 +84,3 @@ namespace Banco
 
     }
 }
-
