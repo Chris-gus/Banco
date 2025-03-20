@@ -11,7 +11,7 @@ namespace Banco
         
         public ContaCorrente(int numeroConta, string titular, double saldoInicial) : base(numeroConta, titular, saldoInicial)
         {
-            
+            TaxaSaque = 5;
         }
 
     }

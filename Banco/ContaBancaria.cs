@@ -14,6 +14,8 @@ namespace Banco
         private int _numeroConta;
         private string _titular;
         private double _saldo;
+        private double _taxaSaque;
+        private double _percentualBonus;
         public int NumeroConta
         {
             get { return _numeroConta; } 
@@ -65,6 +67,11 @@ namespace Banco
                 }
             }
         }
+        protected double TaxaSaque
+        {
+            get { return _taxaSaque; }
+            set { _taxaSaque = value; }
+        }
 
         public ContaBancaria(int numeroConta, string titular, double saldoInicial)
         {
@@ -72,14 +79,63 @@ namespace Banco
             _titular = titular;
             _saldo = saldoInicial;
         }
-       
+        protected double PercentualBonus 
+        {
+            get { return _percentualBonus; }
+            set { _percentualBonus= value; }
+        }
 
-  
+        public void ExibirSaldo()
+        {
+            Console.Clear();
+            Console.WriteLine($"Seu saldo atual é de :{Saldo}");
+            Limpar();
+        }
+        public double InserirDeposito()
+        {
+            Console.Clear();
+            try
+            {
+                Console.WriteLine("Insira o quanto você deseja depositar: ");
+                double dep = double.Parse(Console.ReadLine());
+                Limpar();
+                if (dep > 0)
+                {
+                    return Saldo += dep * (1 + PercentualBonus /100);
+                }
+                else
+                {
+                    throw new Exception("O valor deve ser maior que 0.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Limpar();
+                return InserirDeposito();
+            }
+        }
+        public double InserirSaque()
+        {
+
+            Console.Clear();
+            Console.WriteLine("Insira o quanto você deseja sacar: ");
+            double saq = double.Parse(Console.ReadLine());
+            Limpar();
+            return Saldo -= saq + TaxaSaque;
+        }
+        public void Limpar()
+        {
+            Console.WriteLine("Enter para continuar...");
+            Console.ReadLine();
+            Console.Clear();
+        }
 
 
 
-      
-        
+
+
+
 
 
     }

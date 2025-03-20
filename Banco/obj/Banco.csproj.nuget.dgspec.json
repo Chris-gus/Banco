@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/home/mars/Projetos/Banco/Banco/Banco.csproj": {}
+    "C:\\Users\\christopher.oliveir\\source\\repos\\Banco\\Banco\\Banco.csproj": {}
   },
   "projects": {
-    "/home/mars/Projetos/Banco/Banco/Banco.csproj": {
+    "C:\\Users\\christopher.oliveir\\source\\repos\\Banco\\Banco\\Banco.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/mars/Projetos/Banco/Banco/Banco.csproj",
+        "projectUniqueName": "C:\\Users\\christopher.oliveir\\source\\repos\\Banco\\Banco\\Banco.csproj",
         "projectName": "Banco",
-        "projectPath": "/home/mars/Projetos/Banco/Banco/Banco.csproj",
-        "packagesPath": "/home/mars/.nuget/packages/",
-        "outputPath": "/home/mars/Projetos/Banco/Banco/obj/",
+        "projectPath": "C:\\Users\\christopher.oliveir\\source\\repos\\Banco\\Banco\\Banco.csproj",
+        "packagesPath": "C:\\Users\\christopher.oliveir\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\christopher.oliveir\\source\\repos\\Banco\\Banco\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/mars/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\christopher.oliveir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,13 +38,7 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net7.0": {
@@ -54,26 +54,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.20, 7.0.20]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[7.0.20, 7.0.20]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[7.0.20, 7.0.20]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.200/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }
