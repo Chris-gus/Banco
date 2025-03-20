@@ -88,6 +88,8 @@ namespace Banco
         public void ExibirSaldo()
         {
             Console.Clear();
+            Console.WriteLine($"Número da conta: {NumeroConta}");
+            Console.WriteLine($"Titular: {Titular}");
             Console.WriteLine($"Seu saldo atual é de :{Saldo}");
             Limpar();
         }
