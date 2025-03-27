@@ -5,9 +5,13 @@
         static void Main(string[] args)
         {
             EscolherConta();
+            
         }
+        
         static void EscolherConta()
         {
+            Console.Clear();
+            List<ContaBancaria> contas = new List<ContaBancaria>();
             try
             {
                 Console.WriteLine("Qual o tipo de conta que você possui?");
@@ -20,16 +24,19 @@
                 {
                     case 0:
                         ContaBancaria cb = new ContaBancaria(0, "", 0);
-                        Interacao(cb);
+                        Interacao(cb, contas);
+                        contas.Add(cb);
                         break;
                     case 1:
 
                         ContaCorrente cc = new ContaCorrente(0, "", 0);
-                        Interacao(cc);
+                        Interacao(cc, contas);
+                        contas.Add(cc);
                         break;
                     case 2:
                         ContaPoupanca cp = new ContaPoupanca(0, "", 0);
-                        Interacao(cp);
+                        Interacao(cp, contas);
+                        contas.Add(cp);
                         break;
                     default:
                         throw new Exception("Insira um valor válido.");
@@ -44,15 +51,15 @@
                 EscolherConta();
             }
         }
-        static void Interacao(ContaBancaria conta)
+        static void Interacao(ContaBancaria conta, List<ContaBancaria> contas)
         {
 
             InserirNum(conta);
             InserirTitular(conta);
             InserirSaldo(conta);
-            EscolherOperacao(conta);
+            EscolherOperacao(conta, contas);
         }
-        static void EscolherOperacao(ContaBancaria conta)
+        static void EscolherOperacao(ContaBancaria conta, List<ContaBancaria> contas)
         {
             int op = 1;
             while (op != 0)
@@ -63,6 +70,7 @@
                 Console.WriteLine("1- exibir saldo");
                 Console.WriteLine("2- sacar ");
                 Console.WriteLine("3- depositar");
+                Console.WriteLine("4- criar nova conta");
                 op = int.Parse(Console.ReadLine());
 
                 switch (op)
@@ -71,7 +79,7 @@
                         Console.WriteLine("Saindo...");
                         break;
                     case 1:
-                        conta.ExibirSaldo();
+                        EscolhaExibicao(conta, contas);
                         break;
                     case 2:
                         conta.InserirSaque();
@@ -79,10 +87,36 @@
                     case 3:
                         conta.InserirDeposito();
                         break;
+                    case 4:
+                        EscolherConta();
+                        break;
+                    default:
+                        throw new Exception("Favor inserir um valor válido.");
+                        
                 }
             }
         }
+        static void EscolhaExibicao(ContaBancaria conta, List<ContaBancaria> contas)
+        {
+            Console.Clear();
+            Console.WriteLine("Escolha sua operação: ");
+            Console.WriteLine("1- exibir apenas o saldo dessa conta.");
+            Console.WriteLine("2- exibir todas as contas.");
+            int op = int.Parse(Console.ReadLine());
+            switch(op)
+            {
+                case 1: 
+                conta.ExibirSaldo();
+                break;
+                case 2:
+                foreach(ContaBancaria cb in contas)
+                {
+                    cb.ExibirSaldo();
+                }
+                break;
+            }
 
+        }
 
 
         static void InserirNum(ContaBancaria conta)

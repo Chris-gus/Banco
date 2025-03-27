@@ -90,7 +90,7 @@ namespace Banco
             Console.Clear();
             Console.WriteLine($"Número da conta: {NumeroConta}");
             Console.WriteLine($"Titular: {Titular}");
-            Console.WriteLine($"Seu saldo atual é de :{Saldo}");
+            Console.WriteLine($"O saldo atual é de :{Saldo}");
             Limpar();
         }
         public double InserirDeposito()
