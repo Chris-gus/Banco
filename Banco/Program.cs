@@ -4,14 +4,15 @@
     {
         static void Main(string[] args)
         {
-            EscolherConta();
+            List<ContaBancaria> contas = new List<ContaBancaria>();
+            EscolherConta(contas);
             
         }
         
-        static void EscolherConta()
+        static void EscolherConta(List<ContaBancaria> contas)
         {
             Console.Clear();
-            List<ContaBancaria> contas = new List<ContaBancaria>();
+            
             try
             {
                 Console.WriteLine("Qual o tipo de conta que você possui?");
@@ -48,7 +49,7 @@
                 Console.WriteLine("Enter para continuar...");
                 Console.ReadLine();
                 Console.Clear();
-                EscolherConta();
+                EscolherConta(contas);
             }
         }
         static void Interacao(ContaBancaria conta, List<ContaBancaria> contas)
@@ -88,7 +89,7 @@
                         conta.InserirDeposito();
                         break;
                     case 4:
-                        EscolherConta();
+                        EscolherConta(contas);
                         break;
                     default:
                         throw new Exception("Favor inserir um valor válido.");
