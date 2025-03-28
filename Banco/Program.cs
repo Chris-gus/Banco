@@ -25,19 +25,22 @@
                 {
                     case 0:
                         ContaBancaria cb = new ContaBancaria(0, "", 0);
-                        Interacao(cb, contas);
                         contas.Add(cb);
+                        Interacao(cb, contas);
+                        
                         break;
                     case 1:
 
                         ContaCorrente cc = new ContaCorrente(0, "", 0);
-                        Interacao(cc, contas);
                         contas.Add(cc);
+                        Interacao(cc, contas);
+                        
                         break;
                     case 2:
                         ContaPoupanca cp = new ContaPoupanca(0, "", 0);
-                        Interacao(cp, contas);
                         contas.Add(cp);
+                        Interacao(cp, contas);
+                        
                         break;
                     default:
                         throw new Exception("Insira um valor válido.");
@@ -115,6 +118,8 @@
                     cb.ExibirSaldo();
                 }
                 break;
+                default:
+                    throw new Exception("Insira uma operação válida.");
             }
 
         }
