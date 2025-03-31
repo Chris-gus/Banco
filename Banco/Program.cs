@@ -26,6 +26,7 @@
                     case 0:
                         ContaBancaria cb = new ContaBancaria(0, "", 0);
                         contas.Add(cb);
+                        cb.TipoConta = "Conta Bancária";
                         Interacao(cb, contas);
                         
                         break;
@@ -33,12 +34,14 @@
 
                         ContaCorrente cc = new ContaCorrente(0, "", 0);
                         contas.Add(cc);
+                        cc.TipoConta = "Conta Corrente";
                         Interacao(cc, contas);
                         
                         break;
                     case 2:
                         ContaPoupanca cp = new ContaPoupanca(0, "", 0);
                         contas.Add(cp);
+                        cp.TipoConta = "Conta Poupança";
                         Interacao(cp, contas);
                         
                         break;

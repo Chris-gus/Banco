@@ -16,6 +16,13 @@ namespace Banco
         private double _saldo;
         private double _taxaSaque;
         private double _percentualBonus;
+        private string _tipoConta;
+
+        public string TipoConta
+        {
+            get { return _tipoConta; }
+            set { _tipoConta = value;}
+        }
         public int NumeroConta
         {
             get { return _numeroConta; } 
@@ -88,6 +95,7 @@ namespace Banco
         public void ExibirSaldo()
         {
             Console.Clear();
+            Console.WriteLine($"Tipo da conta: {TipoConta}");
             Console.WriteLine($"Número da conta: {NumeroConta}");
             Console.WriteLine($"Titular: {Titular}");
             Console.WriteLine($"O saldo atual é de :{Saldo}");
